@@ -2,7 +2,7 @@ var express = require('express');
 var middleware = require('./middleware');
 var app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(middleware.requireAuthentication);
 app.use(middleware.logger);
@@ -21,5 +21,7 @@ app.listen(PORT,()=>{
 	git status
 	-a "all changed files are added to commit that git knows about"
 	-m "allows you to add a message"
+	add - "add an untracked file"
+	. - "add all tracked that are changed for a commit"
 
 */
